@@ -1,0 +1,22 @@
+--- Xsettings-client-0.10/configure.ac.orig	2003-03-28 11:39:51.000000000 +0100
++++ Xsettings-client-0.10/configure.ac	2006-12-26 22:08:51.641948341 +0100
+@@ -3,8 +3,6 @@
+ AM_INIT_AUTOMAKE(Xsettings-client, 0.10)
+ AM_CONFIG_HEADER(config.h)
+ 
+-CFLAGS="-Os -Wall"
+-
+ # Checks for programs.
+ AC_PROG_CC
+ AC_PROG_LIBTOOL
+--- libxsettings-client-0.17/Makefile.am.orig	2005-10-26 18:00:34.000000000 +0200
++++ libxsettings-client-0.17/Makefile.am	2007-06-20 21:10:51.049868039 +0200
+@@ -13,7 +13,7 @@
+ 
+ libXsettings_client_la_SOURCES = $(source_c) $(source_h)
+ 
+-libXsettings_client_la_LIBADD      = @X_LIBS@
++libXsettings_client_la_LIBADD      = @X_LIBS@ -lX11
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libxsettings-client.pc
