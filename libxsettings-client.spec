@@ -2,7 +2,7 @@ Summary:	Inter-toolkit configuration settings library
 Summary(pl.UTF-8):	Biblioteka ustawień dzielonych między toolkitami
 Name:		libxsettings-client
 Version:	0.17
-Release:	3
+Release:	4
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.bz2
@@ -16,7 +16,7 @@ BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	xorg-lib-libX11-devel
 Provides:	Xsettings-client = %{version}-%{release}
-Obsoletes:	Xsettings-client
+Obsoletes:	Xsettings-client < 0.17-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +42,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
 Provides:	Xsettings-client-devel = %{version}-%{release}
-Obsoletes:	Xsettings-client-devel
+Obsoletes:	Xsettings-client-devel < 0.17-1
 
 %description devel
 Header files for libXsettings-client library.
