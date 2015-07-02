@@ -2,7 +2,7 @@ Summary:	Inter-toolkit configuration settings library
 Summary(pl.UTF-8):	Biblioteka ustawień dzielonych między toolkitami
 Name:		libxsettings-client
 Version:	0.17
-Release:	5
+Release:	6
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.bz2
@@ -70,6 +70,9 @@ Summary(pl.UTF-8):	Dokumentacja API libXsettings-client
 License:	LGPL v2.1+
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 libXsettings-client API documentation.
