@@ -2,7 +2,7 @@ Summary:	Inter-toolkit configuration settings library
 Summary(pl.UTF-8):	Biblioteka ustawień dzielonych między toolkitami
 Name:		libxsettings-client
 Version:	0.17
-Release:	6
+Release:	7
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.bz2
@@ -70,7 +70,7 @@ Summary(pl.UTF-8):	Dokumentacja API libXsettings-client
 License:	LGPL v2.1+
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
@@ -100,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libXsettings-client.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -114,7 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXsettings-client.so
-%{_libdir}/libXsettings-client.la
 %{_includedir}/xsettings-*.h
 %{_pkgconfigdir}/libxsettings-client.pc
 
